@@ -1,95 +1,290 @@
 <!DOCTYPE html>
-<html
-  style="--tg-color-scheme: light; --tg-theme-bg-color: #ffffff; --tg-theme-text-color: #000000; --tg-theme-hint-color: #707579; --tg-theme-link-color: #3390ec; --tg-theme-button-color: #3390ec; --tg-theme-button-text-color: #ffffff; --tg-theme-secondary-bg-color: #f4f4f5; --tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh;"
-  class="light espllxse idc0_345">
+<html lang="en">
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <title>DurgerKingBot</title>
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
-  <meta name="format-detection" content="telephone=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="MobileOptimized" content="176">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="robots" content="noindex, nofollow">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script>
-    function setThemeClass() {
-      document.documentElement.className = Telegram.WebApp.colorScheme;
-    }
-    Telegram.WebApp.onEvent('themeChanged', setThemeClass);
-    setThemeClass();
-  </script>
-  <link href="cafe.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Shipping Info</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href='/webpage/shipping.css' />
 </head>
 
-<body style="">
-  <section class="cafe-page cafe-items">
-    <div class="cafe-item js-item" data-item-id="1" data-item-price="4990">
-      <div class="cafe-item-counter js-item-counter">1</div>
-      <div class="cafe-item-photo">
-        <picture class="cafe-item-lottie js-item-lottie">
-          <source type="application/x-tgsticker" srcset="https://tg.dev/js/Burger.tgs 1x">
-
-          <canvas width="88" height="88"></canvas>
-        </picture>
-      </div>
-      <div class="cafe-item-label">
-        <span class="cafe-item-title">Burger</span>
-        <span class="cafe-item-price">$4.99</span>
-      </div>
-      <div class="cafe-item-buttons">
-        <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
-          <span class="ripple-mask"><span class="ripple"></span></span>
-        </button>
-        <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
-          <span class="button-item-label">Add</span>
-          <span class="ripple-mask"><span class="ripple"></span></span>
-        </button>
-      </div>
-    </div>
-    
-    </div>
-    </div>
-    
-    <div class="cafe-item js-item" data-item-id="2" data-item-price="4990">
-      <div class="cafe-item-counter js-item-counter">1</div>
-      <div class="cafe-item-photo">
-        <picture class="cafe-item-lottie js-item-lottie">
-          <source type="application/x-tgsticker" srcset="https://tg.dev/js/Burger.tgs 1x">
-
-          <canvas width="88" height="88"></canvas>
-        </picture>
-      </div>
-      <div class="cafe-item-label">
-        <span class="cafe-item-title">Burger</span>
-        <span class="cafe-item-price">$4.99</span>
-      </div>
-      <div class="cafe-item-buttons">
-        <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
-          <span class="ripple-mask"><span class="ripple"></span></span>
-        </button>
-        <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
-          <span class="button-item-label">Add</span>
-          <span class="ripple-mask"><span class="ripple"></span></span>
-        </button>
-      </div>
-    </div>
-
-
-  </section>
-  <div class="cafe-status-wrap">
-    <div class="cafe-status js-status"></div>
-  </div>
-  <script src="https://tg.dev/js/jquery.min.js"></script>
-  <script src="https://tg.dev/js/tgsticker.js"></script>
-  <script src="https://tg.dev/js/cafe.js"></script>
-  <script>Cafe.init({ "apiUrl": "\/cafe\/api", "userId": 0, "userHash": null });</script>
-
-
-
+<body>
+    <form id="shipping_info">
+        <div class="input-group">
+            <h5>Shipping address</h5>
+            <div class="input-group touched with-label"><input class="form-control" type="text" dir="auto" tabindex="0"
+                    inputmode="text" aria-label="Address 1 (Street)"><label>Address 1 (Street)</label></div>
+            <div class="input-group with-label"><input class="form-control" type="text" dir="auto" tabindex="0"
+                    inputmode="text" aria-label="Address 2 (Street)"><label>Address 2 (Street)</label></div>
+            <div class="input-group touched with-label"><input class="form-control" type="text" dir="auto" tabindex="0"
+                    inputmode="text" aria-label="City"><label>City</label></div>
+            <div class="input-group touched with-label"><input class="form-control" type="text" dir="auto"
+                    inputmode="text" aria-label="State"><label>State</label></div>
+            <div class="input-group touched with-label with-arrow input-group"><select class="form-control"
+                    id="shipping-country" tabindex="0">
+                    <option value="AF" class="county-item">Afghanistan</option>
+                    <option value="AL" class="county-item">Albania</option>
+                    <option value="DZ" class="county-item">Algeria</option>
+                    <option value="AS" class="county-item">American Samoa</option>
+                    <option value="AD" class="county-item">Andorra</option>
+                    <option value="AO" class="county-item">Angola</option>
+                    <option value="AI" class="county-item">Anguilla</option>
+                    <option value="FT" class="county-item">Anonymous Numbers</option>
+                    <option value="AG" class="county-item">Antigua &amp; Barbuda</option>
+                    <option value="AR" class="county-item">Argentina</option>
+                    <option value="AM" class="county-item">Armenia</option>
+                    <option value="AW" class="county-item">Aruba</option>
+                    <option value="AU" class="county-item">Australia</option>
+                    <option value="AT" class="county-item">Austria</option>
+                    <option value="AZ" class="county-item">Azerbaijan</option>
+                    <option value="BS" class="county-item">Bahamas</option>
+                    <option value="BH" class="county-item">Bahrain</option>
+                    <option value="BD" class="county-item">Bangladesh</option>
+                    <option value="BB" class="county-item">Barbados</option>
+                    <option value="BY" class="county-item">Belarus</option>
+                    <option value="BE" class="county-item">Belgium</option>
+                    <option value="BZ" class="county-item">Belize</option>
+                    <option value="BJ" class="county-item">Benin</option>
+                    <option value="BM" class="county-item">Bermuda</option>
+                    <option value="BT" class="county-item">Bhutan</option>
+                    <option value="BO" class="county-item">Bolivia</option>
+                    <option value="BQ" class="county-item">Bonaire, Sint Eustatius &amp; Saba</option>
+                    <option value="BA" class="county-item">Bosnia &amp; Herzegovina</option>
+                    <option value="BW" class="county-item">Botswana</option>
+                    <option value="BR" class="county-item">Brazil</option>
+                    <option value="VG" class="county-item">British Virgin Islands</option>
+                    <option value="BN" class="county-item">Brunei Darussalam</option>
+                    <option value="BG" class="county-item">Bulgaria</option>
+                    <option value="BF" class="county-item">Burkina Faso</option>
+                    <option value="BI" class="county-item">Burundi</option>
+                    <option value="KH" class="county-item">Cambodia</option>
+                    <option value="CM" class="county-item">Cameroon</option>
+                    <option value="CA" class="county-item">Canada</option>
+                    <option value="CV" class="county-item">Cape Verde</option>
+                    <option value="KY" class="county-item">Cayman Islands</option>
+                    <option value="CF" class="county-item">Central African Rep.</option>
+                    <option value="TD" class="county-item">Chad</option>
+                    <option value="CL" class="county-item">Chile</option>
+                    <option value="CN" class="county-item">China</option>
+                    <option value="CO" class="county-item">Colombia</option>
+                    <option value="KM" class="county-item">Comoros</option>
+                    <option value="CD" class="county-item">Congo (Dem. Rep.)</option>
+                    <option value="CG" class="county-item">Congo (Rep.)</option>
+                    <option value="CK" class="county-item">Cook Islands</option>
+                    <option value="CR" class="county-item">Costa Rica</option>
+                    <option value="CI" class="county-item">Côte d'Ivoire</option>
+                    <option value="HR" class="county-item">Croatia</option>
+                    <option value="CU" class="county-item">Cuba</option>
+                    <option value="CW" class="county-item">Curaçao</option>
+                    <option value="CY" class="county-item">Cyprus</option>
+                    <option value="CZ" class="county-item">Czech Republic</option>
+                    <option value="DK" class="county-item">Denmark</option>
+                    <option value="IO" class="county-item">Diego Garcia</option>
+                    <option value="DJ" class="county-item">Djibouti</option>
+                    <option value="DM" class="county-item">Dominica</option>
+                    <option value="DO" class="county-item">Dominican Rep.</option>
+                    <option value="EC" class="county-item">Ecuador</option>
+                    <option value="EG" class="county-item">Egypt</option>
+                    <option value="SV" class="county-item">El Salvador</option>
+                    <option value="GQ" class="county-item">Equatorial Guinea</option>
+                    <option value="ER" class="county-item">Eritrea</option>
+                    <option value="EE" class="county-item">Estonia</option>
+                    <option value="SZ" class="county-item">Eswatini</option>
+                    <option value="ET" class="county-item">Ethiopia</option>
+                    <option value="FK" class="county-item">Falkland Islands</option>
+                    <option value="FO" class="county-item">Faroe Islands</option>
+                    <option value="FJ" class="county-item">Fiji</option>
+                    <option value="FI" class="county-item">Finland</option>
+                    <option value="FR" class="county-item">France</option>
+                    <option value="GF" class="county-item">French Guiana</option>
+                    <option value="PF" class="county-item">French Polynesia</option>
+                    <option value="GA" class="county-item">Gabon</option>
+                    <option value="GM" class="county-item">Gambia</option>
+                    <option value="GE" class="county-item">Georgia</option>
+                    <option value="DE" class="county-item">Germany</option>
+                    <option value="GH" class="county-item">Ghana</option>
+                    <option value="GI" class="county-item">Gibraltar</option>
+                    <option value="GR" class="county-item">Greece</option>
+                    <option value="GL" class="county-item">Greenland</option>
+                    <option value="GD" class="county-item">Grenada</option>
+                    <option value="GP" class="county-item">Guadeloupe</option>
+                    <option value="GU" class="county-item">Guam</option>
+                    <option value="GT" class="county-item">Guatemala</option>
+                    <option value="GN" class="county-item">Guinea</option>
+                    <option value="GW" class="county-item">Guinea-Bissau</option>
+                    <option value="GY" class="county-item">Guyana</option>
+                    <option value="HT" class="county-item">Haiti</option>
+                    <option value="HN" class="county-item">Honduras</option>
+                    <option value="HK" class="county-item">Hong Kong</option>
+                    <option value="HU" class="county-item">Hungary</option>
+                    <option value="IS" class="county-item">Iceland</option>
+                    <option value="IN" class="county-item">India</option>
+                    <option value="ID" class="county-item">Indonesia</option>
+                    <option value="IR" class="county-item">Iran</option>
+                    <option value="IQ" class="county-item">Iraq</option>
+                    <option value="IE" class="county-item">Ireland</option>
+                    <option value="IL" class="county-item">Israel</option>
+                    <option value="IT" class="county-item">Italy</option>
+                    <option value="JM" class="county-item">Jamaica</option>
+                    <option value="JP" class="county-item">Japan</option>
+                    <option value="JO" class="county-item">Jordan</option>
+                    <option value="KZ" class="county-item">Kazakhstan</option>
+                    <option value="KE" class="county-item">Kenya</option>
+                    <option value="KI" class="county-item">Kiribati</option>
+                    <option value="XK" class="county-item">Kosovo</option>
+                    <option value="KW" class="county-item">Kuwait</option>
+                    <option value="KG" class="county-item">Kyrgyzstan</option>
+                    <option value="LA" class="county-item">Laos</option>
+                    <option value="LV" class="county-item">Latvia</option>
+                    <option value="LB" class="county-item">Lebanon</option>
+                    <option value="LS" class="county-item">Lesotho</option>
+                    <option value="LR" class="county-item">Liberia</option>
+                    <option value="LY" class="county-item">Libya</option>
+                    <option value="LI" class="county-item">Liechtenstein</option>
+                    <option value="LT" class="county-item">Lithuania</option>
+                    <option value="LU" class="county-item">Luxembourg</option>
+                    <option value="MO" class="county-item">Macau</option>
+                    <option value="MG" class="county-item">Madagascar</option>
+                    <option value="MW" class="county-item">Malawi</option>
+                    <option value="MY" class="county-item">Malaysia</option>
+                    <option value="MV" class="county-item">Maldives</option>
+                    <option value="ML" class="county-item">Mali</option>
+                    <option value="MT" class="county-item">Malta</option>
+                    <option value="MH" class="county-item">Marshall Islands</option>
+                    <option value="MQ" class="county-item">Martinique</option>
+                    <option value="MR" class="county-item">Mauritania</option>
+                    <option value="MU" class="county-item">Mauritius</option>
+                    <option value="MX" class="county-item">Mexico</option>
+                    <option value="FM" class="county-item">Micronesia</option>
+                    <option value="MD" class="county-item">Moldova</option>
+                    <option value="MC" class="county-item">Monaco</option>
+                    <option value="MN" class="county-item">Mongolia</option>
+                    <option value="ME" class="county-item">Montenegro</option>
+                    <option value="MS" class="county-item">Montserrat</option>
+                    <option value="MA" class="county-item">Morocco</option>
+                    <option value="MZ" class="county-item">Mozambique</option>
+                    <option value="MM" class="county-item">Myanmar</option>
+                    <option value="NA" class="county-item">Namibia</option>
+                    <option value="NR" class="county-item">Nauru</option>
+                    <option value="NP" class="county-item">Nepal</option>
+                    <option value="NL" class="county-item">Netherlands</option>
+                    <option value="NC" class="county-item">New Caledonia</option>
+                    <option value="NZ" class="county-item">New Zealand</option>
+                    <option value="NI" class="county-item">Nicaragua</option>
+                    <option value="NE" class="county-item">Niger</option>
+                    <option value="NG" class="county-item">Nigeria</option>
+                    <option value="NU" class="county-item">Niue</option>
+                    <option value="NF" class="county-item">Norfolk Island</option>
+                    <option value="KP" class="county-item">North Korea</option>
+                    <option value="MK" class="county-item">North Macedonia</option>
+                    <option value="MP" class="county-item">Northern Mariana Islands</option>
+                    <option value="NO" class="county-item">Norway</option>
+                    <option value="OM" class="county-item">Oman</option>
+                    <option value="PK" class="county-item">Pakistan</option>
+                    <option value="PW" class="county-item">Palau</option>
+                    <option value="PS" class="county-item">Palestine</option>
+                    <option value="PA" class="county-item">Panama</option>
+                    <option value="PG" class="county-item">Papua New Guinea</option>
+                    <option value="PY" class="county-item">Paraguay</option>
+                    <option value="PE" class="county-item">Peru</option>
+                    <option value="PH" class="county-item">Philippines</option>
+                    <option value="PL" class="county-item">Poland</option>
+                    <option value="PT" class="county-item">Portugal</option>
+                    <option value="PR" class="county-item">Puerto Rico</option>
+                    <option value="QA" class="county-item">Qatar</option>
+                    <option value="RE" class="county-item">Réunion</option>
+                    <option value="RO" class="county-item">Romania</option>
+                    <option value="RU" class="county-item">Russian Federation</option>
+                    <option value="RW" class="county-item">Rwanda</option>
+                    <option value="SH" class="county-item">Saint Helena</option>
+                    <option value="KN" class="county-item">Saint Kitts &amp; Nevis</option>
+                    <option value="LC" class="county-item">Saint Lucia</option>
+                    <option value="PM" class="county-item">Saint Pierre &amp; Miquelon</option>
+                    <option value="VC" class="county-item">Saint Vincent &amp; the Grenadines</option>
+                    <option value="WS" class="county-item">Samoa</option>
+                    <option value="SM" class="county-item">San Marino</option>
+                    <option value="ST" class="county-item">São Tomé &amp; Príncipe</option>
+                    <option value="SA" class="county-item">Saudi Arabia</option>
+                    <option value="SN" class="county-item">Senegal</option>
+                    <option value="RS" class="county-item">Serbia</option>
+                    <option value="SC" class="county-item">Seychelles</option>
+                    <option value="SL" class="county-item">Sierra Leone</option>
+                    <option value="SG" class="county-item">Singapore</option>
+                    <option value="SX" class="county-item">Sint Maarten</option>
+                    <option value="SK" class="county-item">Slovakia</option>
+                    <option value="SI" class="county-item">Slovenia</option>
+                    <option value="SB" class="county-item">Solomon Islands</option>
+                    <option value="SO" class="county-item">Somalia</option>
+                    <option value="ZA" class="county-item">South Africa</option>
+                    <option value="KR" class="county-item">South Korea</option>
+                    <option value="SS" class="county-item">South Sudan</option>
+                    <option value="ES" class="county-item">Spain</option>
+                    <option value="LK" class="county-item">Sri Lanka</option>
+                    <option value="SD" class="county-item">Sudan</option>
+                    <option value="SR" class="county-item">Suriname</option>
+                    <option value="SE" class="county-item">Sweden</option>
+                    <option value="CH" class="county-item">Switzerland</option>
+                    <option value="SY" class="county-item">Syria</option>
+                    <option value="TW" class="county-item">Taiwan</option>
+                    <option value="TJ" class="county-item">Tajikistan</option>
+                    <option value="TZ" class="county-item">Tanzania</option>
+                    <option value="TH" class="county-item">Thailand</option>
+                    <option value="TL" class="county-item">Timor-Leste</option>
+                    <option value="TG" class="county-item">Togo</option>
+                    <option value="TK" class="county-item">Tokelau</option>
+                    <option value="TO" class="county-item">Tonga</option>
+                    <option value="TT" class="county-item">Trinidad &amp; Tobago</option>
+                    <option value="TN" class="county-item">Tunisia</option>
+                    <option value="TR" class="county-item">Turkey</option>
+                    <option value="TM" class="county-item">Turkmenistan</option>
+                    <option value="TC" class="county-item">Turks &amp; Caicos Islands</option>
+                    <option value="TV" class="county-item">Tuvalu</option>
+                    <option value="UG" class="county-item">Uganda</option>
+                    <option value="UA" class="county-item">Ukraine</option>
+                    <option value="AE" class="county-item">United Arab Emirates</option>
+                    <option value="GB" class="county-item">United Kingdom</option>
+                    <option value="UY" class="county-item">Uruguay</option>
+                    <option value="VI" class="county-item">US Virgin Islands</option>
+                    <option value="US" class="county-item">USA</option>
+                    <option value="UZ" class="county-item">Uzbekistan</option>
+                    <option value="VU" class="county-item">Vanuatu</option>
+                    <option value="VE" class="county-item">Venezuela</option>
+                    <option value="VN" class="county-item">Vietnam</option>
+                    <option value="WF" class="county-item">Wallis &amp; Futuna</option>
+                    <option value="YE" class="county-item">Yemen</option>
+                    <option value="ZM" class="county-item">Zambia</option>
+                    <option value="ZW" class="county-item">Zimbabwe</option>
+                </select><label for="shipping-country">Country</label></div>
+            <div class="input-group touched with-label"><input class="form-control" type="text" dir="auto" tabindex="0"
+                    inputmode="text" aria-label="Postcode"><label>Postcode</label></div>
+        </div>
+        <h5>Receiver</h5>
+        <div class="input-group touched with-label"><input class="form-control" type="text" dir="auto" tabindex="0"
+                inputmode="text" aria-label="Full Name"><label>Full Name</label></div>
+        <div class="input-group touched with-label"><input class="form-control" type="text" dir="auto" tabindex="0"
+                inputmode="email" aria-label="Email"><label>Email</label></div>
+        </label>
+        <button type="submit" class="Button default primary" style="">Next</button>
+    </form>
+    <script>
+        const form = document.getElementById("shipping_info");
+        Telegram.WebApp.ready();
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const data = {};
+            for (const [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            Telegram.WebApp.sendData(JSON.stringify(data));
+            Telegram.WebApp.close();
+        });
+    </script>
 </body>
+<script type="text/javascript">
+
+    Telegram.WebApp.expand();
+
+</script>
 
 </html>
